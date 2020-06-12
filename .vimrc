@@ -42,6 +42,10 @@ set shiftwidth=4
 " Make tab like one character not some spaces
 set noexpandtab
 
+" NERDTree options
+" Show hidden files
+let NERDTreeShowHidden=1
+
 " mappings
 map <C-n> :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
