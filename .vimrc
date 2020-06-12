@@ -22,6 +22,7 @@ set number
 
 " Turn on the highlight of searched results
 set hlsearch
+let mapleader = ''
 
 " Turn on the syntax highlight 
 syntax on
@@ -48,4 +49,5 @@ let NERDTreeShowHidden=1
 
 " mappings
 map <C-n> :NERDTreeToggle<CR>
+map <C-c> :nohlsearch<CR>
 map <Leader> <Plug>(easymotion-prefix)

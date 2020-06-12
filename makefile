@@ -1,32 +1,37 @@
-## Compiler name
-CC = 
-## File extension
-LANG = 
-## Program name
-NAME = 
-## Compiler flags
-CFLAGS = 
-## Release flags
-RFLAGS = 
-## Linker flags
-LDFLAGS = 
-## Source directory
-DIR =
+ Compiler name
+ CC = gcc
+ # File extension
+ LANG = .c
+ # Program name
+ NAME = test
+ # Compiler flags
+ CFLAGS = -Wall 
+ # Linker flags
+ LDFLAGS = 
+ # Libs
+ LIBS = 
+ # Source directory
+ DIR = source/
 
-## Creating object files
-OBJECTS := $(addsuffix .o, $(basename $(wildcard $(DIR)*$(LANG))))
 
-## Linking debug version
-all: $(OBJECTS)
-	$(CC) -g $(LDFLAGS) $(OBJECTS) -o $(NAME)_d
+ SRC_FILES = $(wildcard $(DIR)*$(LANG))
 
-## Compiling and linking release version
-release: $(DIR)*$(LANG)
-	$(CC) $(LDFLAGS) $(RFLAGS) $(DIR)*$(LANG) -o $(NAME)
+ # Creating object files
+ OBJECTS := $(notdir $(patsubst %$(LANG), %.o, $(SRC_FILES)))
 
-## Compiling debug
-$(OBJETCS): $(DIR)%$(LANG)
-	$(CC) -g -c $(CFLAGS) $(DIR)*$(LANG) -o $@
-clean:
-	rm $(OBJECTS)
-	rm $(NAME)_d
+ # Linking debug version
+ all: $(OBJECTS)
+ 	$(CC) -g $(LDFLAGS) $(LIBS) $(OBJECTS) -o $(NAME)_d
+
+ 	# Compiling and linking release version
+ 	release: 
+ 		$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) $(SRC_FILES) -o $(NAME)
+
+ 		# Compiling debug
+ 		%.o: $(DIR)%$(LANG)
+ 			$(CC) -g -c $(CFLAGS) $< -o $@
+
+ 			# Clean rep
+ 			clean:
+ 				rm $(OBJECTS)
+ 					rm $(NAME)_d
