@@ -11,18 +11,22 @@ RFLAGS =
 ## Linker flags
 LDFLAGS = 
 ## Source directory
-DIR = source/
+DIR =
 
 ## Creating object files
 OBJECTS := $(addsuffix .o, $(basename $(wildcard $(DIR)*$(LANG))))
 
+## Linking debug version
 all: $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $(NAME)_d
+	$(CC) -g $(LDFLAGS) $(OBJECTS) -o $(NAME)_d
+
+## Compiling and linking release version
 release: $(DIR)*$(LANG)
 	$(CC) $(LDFLAGS) $(RFLAGS) $(DIR)*$(LANG) -o $(NAME)
-	
+
+## Compiling debug
 $(OBJETCS): $(DIR)%$(LANG)
-	$(CC) $(CFLAGS) $(DIR)*$(LANG) -o $@
+	$(CC) -g -c $(CFLAGS) $(DIR)*$(LANG) -o $@
 clean:
 	rm $(OBJECTS)
 	rm $(NAME)_d
