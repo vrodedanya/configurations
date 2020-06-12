@@ -11,7 +11,8 @@ Plug 'Valloric/YouCompleteMe'
 " Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 " Colorschemes
-Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'chriskempson/vim-tomorrow-theme'
 
 " Initialize plugin system
 call plug#end()
@@ -24,11 +25,8 @@ set hlsearch
 
 " Turn on the syntax highlight 
 syntax on
-
-
-
 " Switch colorscheme
-colorscheme gruvbox
+colorscheme PaperColor
 set background=dark
 
 " Set first tab as shiftwidth
