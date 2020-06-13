@@ -1,27 +1,26 @@
- # Compiler name
- CC = 
- # File extension
- LANG = 
- # Program name
- NAME = 
- # Compiler flags
- CFLAGS = -Wall 
- # Linker flags
- LDFLAGS = 
- # Libs
- LIBS = 
- # Source directory
- DIR = source/
+# Compiler name
+CC = 
+# File extension
+LANG = 
+# Program name
+NAME = 
+# Compiler flags
+CFLAGS = -Wall 
+# Linker flags
+LDFLAGS = 
+# Libs
+LIBS = 
+# Source directory
+DIR = source/
 
+SRC_FILES = $(wildcard $(DIR)*$(LANG))
 
- SRC_FILES = $(wildcard $(DIR)*$(LANG))
+# Creating object files
+OBJECTS := $(notdir $(patsubst %$(LANG), %.o, $(SRC_FILES)))
 
- # Creating object files
- OBJECTS := $(notdir $(patsubst %$(LANG), %.o, $(SRC_FILES)))
-
- # Linking debug version
- all: $(OBJECTS)
- 	$(CC) -g $(LDFLAGS) $(LIBS) $(OBJECTS) -o $(NAME)_d
+# Linking debug version
+all: $(OBJECTS)
+	$(CC) -g $(LDFLAGS) $(LIBS) $(OBJECTS) -o $(NAME)_d
 
 # Compiling and linking release version
 release: 
@@ -29,7 +28,7 @@ release:
 
 # Compiling debug
 %.o: $(DIR)%$(LANG)
- 	$(CC) -g -c $(CFLAGS) $< -o $@
+	$(CC) -g -c $(CFLAGS) $< -o $@
 
 # Clean rep
 clean:
