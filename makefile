@@ -1,9 +1,9 @@
- Compiler name
- CC = gcc
+ # Compiler name
+ CC = 
  # File extension
- LANG = .c
+ LANG = 
  # Program name
- NAME = test
+ NAME = 
  # Compiler flags
  CFLAGS = -Wall 
  # Linker flags
@@ -23,15 +23,15 @@
  all: $(OBJECTS)
  	$(CC) -g $(LDFLAGS) $(LIBS) $(OBJECTS) -o $(NAME)_d
 
- 	# Compiling and linking release version
- 	release: 
- 		$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) $(SRC_FILES) -o $(NAME)
+# Compiling and linking release version
+release: 
+	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) $(SRC_FILES) -o $(NAME)
 
- 		# Compiling debug
- 		%.o: $(DIR)%$(LANG)
- 			$(CC) -g -c $(CFLAGS) $< -o $@
+# Compiling debug
+%.o: $(DIR)%$(LANG)
+ 	$(CC) -g -c $(CFLAGS) $< -o $@
 
- 			# Clean rep
- 			clean:
- 				rm $(OBJECTS)
- 					rm $(NAME)_d
+# Clean rep
+clean:
+	rm $(OBJECTS)
+	rm $(NAME)_d
