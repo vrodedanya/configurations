@@ -22,7 +22,9 @@ set number
 
 " Turn on the highlight of searched results
 set hlsearch
-let mapleader = ''
+
+" YCM off preview
+set completeopt-=preview
 
 " Turn on the syntax highlight 
 syntax on
