@@ -1,3 +1,5 @@
+" Install vim-plug: https://github.com/junegunn/vim-plug
+"
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
@@ -42,6 +44,9 @@ set cursorline
 
 " YCM off preview
 set completeopt-=preview
+
+" Fix slow switching modes
+set ttimeoutlen=50
 
 " Turn on the syntax highlight 
 syntax on
