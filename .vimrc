@@ -54,7 +54,7 @@ set noexpandtab
 " Turn on the syntax highlight 
 syntax on
 " Switch colorscheme
-colorscheme sublimemonokai
+colorscheme PaperColor
 set background=dark
 
 " Plugins
