@@ -12,7 +12,7 @@ export HISTCONTROL=ignoreboth
 
 # aliases
 alias ls='ls --color=auto'
-alias ll='ls -alF --color=auto'
+alias ll='ls -alFh --color=auto'
 alias grep='grep --color=auto'
 alias valgrind='valgrind --leak-check=full --tool=memcheck'
 alias updateoff='yay && yay -Sc && shutdown -h now'

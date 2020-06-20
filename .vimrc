@@ -70,6 +70,7 @@ let NERDTreeShowHidden=1
 " Other settings
 " Fix bug with cursor in neovim
 set guicursor = 
+let &t_SI="\<Esc>[2 q"
 
 " mappings
 map <C-n> :NERDTreeToggle<CR>
