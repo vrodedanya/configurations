@@ -66,6 +66,7 @@ let g:ycm_show_diagnostics_ui = 0
 " NERDTree options
 " Show hidden files
 let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
 
 " Other settings
 " Fix bug with cursor in neovim
