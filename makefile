@@ -27,7 +27,7 @@ release:
 	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) $(SRC_FILES) -o $(NAME)
 
 # Compiling debug
-%.o: $(DIR)%$(LANG) 
+%.o: $(DIR)%$(LANG) $(DIR)%.h 
 	$(CC) -g -c $(CFLAGS) $< -o $@
 
 # Clean rep
