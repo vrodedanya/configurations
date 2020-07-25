@@ -29,6 +29,8 @@ DIR :=
 
 # Comment this string if you don't use special directory for building project
 SRC:=$(addprefix ../, $(DIR))
+# And uncomment this
+# SRC:=$(DIR)
 
 # Storage template and path to the source files
 SEARCH_FILE:=$(addsuffix /*$(LANG), $(SRC))
