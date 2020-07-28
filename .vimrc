@@ -62,6 +62,7 @@ set background=dark
 set completeopt-=preview
 " YCM Turn off syntax check 
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_clangd_args=['--header-insertion=never'] " Turn off header-insertion
 
 " NERDTree options
 " Show hidden files
