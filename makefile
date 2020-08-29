@@ -1,4 +1,4 @@
-# This makefile was wrote by Kolotushkin Danil
+# This makefile was written by Kolotushkin Danil
 # github: https://github.com/vrodedanya
 #
 # The makefile located one directory below root directory of your project. 
