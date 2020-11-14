@@ -85,6 +85,7 @@ static_library: $(filter-out main.o, $(OBJ_FILES))
 	@$(CC) -c $(CFLAGS) $(DEF) -MD $<
 	@echo -e "$(PROCESS_C)Compiling:$(NC) $(FILE_C)$(notdir $<)$(NC) with $(FLAGS_C)$(CFLAGS) $(DEF)$(NC)"
 clean:
-	rm -rf *.o *d $(NAME)
+	@rm -rf *.o *d $(NAME)
+	@echo -e "$(PROCESS_C)Cleaning...$(NC)"
 
 include $(wildcard *.d)
