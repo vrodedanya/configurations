@@ -12,6 +12,7 @@ Plug 'Valloric/YouCompleteMe'
 " Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'
 " Add beatifull status bar
 Plug 'vim-airline/vim-airline'
 " Colorschemes
@@ -61,6 +62,8 @@ set background=dark
 " YCM off preview
 set completeopt-=preview
 " YCM Turn off syntax check 
+let g:ycm_global_ycm_extra_conf = '~/IT/Templates/.ycm_extra_conf.py' " Specify your own way to file
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_clangd_args=['--header-insertion=never'] " Turn off header-insertion
 
