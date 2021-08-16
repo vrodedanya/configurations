@@ -13,12 +13,13 @@ Plug 'Valloric/YouCompleteMe'
 " Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
+
+Plug 'octol/vim-cpp-enhanced-highlight'
 " Add beatifull status bar
 Plug 'vim-airline/vim-airline'
 " Colorschemes
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'ErichDonGubler/vim-sublime-monokai'
+Plug 'arcticicestudio/nord-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -54,9 +55,9 @@ set noexpandtab
 " Colorschemes
 " Turn on the syntax highlight 
 syntax on
+set background=dark
 " Switch colorscheme
 colorscheme PaperColor
-set background=dark
 
 " Plugins
 " YCM off preview
@@ -64,8 +65,13 @@ set completeopt-=preview
 " YCM Turn off syntax check 
 let g:ycm_global_ycm_extra_conf = '~/IT/Templates/.ycm_extra_conf.py' " Specify your own way to file
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_show_diagnostics_ui = 0
+let g:ycm_show_diagnostics_ui = 1
 let g:ycm_clangd_args=['--header-insertion=never'] " Turn off header-insertion
+
+func MyHandler(timer)
+  silent exec "YcmForceCompileAndDiagnostics"
+endfunc
+let timer = timer_start(1000, 'MyHandler', {'repeat': -1})
 
 " NERDTree options
 " Show hidden files
