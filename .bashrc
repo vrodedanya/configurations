@@ -21,7 +21,7 @@ alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep per
 function workon() {
     if test -z "$1" ; then
         echo "Specify the name of the virtual environment"
-    elif test ! -f "$HOME/.virtualenvs/$1/bin/activate" ; then
+    elif test ! -f "$HOME/.venv/$1/bin/activate" ; then
         echo "Environment doesn't exist"
     else
         deactivate 2> /dev/null
